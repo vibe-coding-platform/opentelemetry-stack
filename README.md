@@ -13,3 +13,13 @@ DEPLOY IN 5 MINUTES:
 2. docker-compose up → Collector + Grafana + Tempo  
 3. Import SLO dashboard → Live traces/metrics  
 4. Alerts fire → MTTR <3min guaranteed
+
+# OpenTelemetry Production Stack 🚀
+
+## 5-Minute Production Observability
+
+```bash
+git clone https://github.com/vibe-coding-platform/platform-starter
+cd platform-starter
+# Copy observability files from opentelemetry-stack
+docker-compose -f docker-compose.observability.yml up -d
