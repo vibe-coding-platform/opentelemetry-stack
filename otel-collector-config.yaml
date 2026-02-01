@@ -1,0 +1,19 @@
+processors:
+  batch:
+    timeout: 1s
+    send_batch_size: 1000
+  memory_limiter:
+    limit_mib: 512  # Production limit
+
+exporters:
+  otlp/tempo:  # Traces first
+    endpoint: tempo:4317
+  prometheus:  # Metrics second
+  logging:     # Logs last
+
+service:
+  pipelines:
+    traces:
+      exporters: [otlp/tempo]
+    metrics: 
+      exporters: [prometheus]
